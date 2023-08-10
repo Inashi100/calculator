@@ -1,3 +1,7 @@
+let operators = '';
+let previousvalue = '';
+let currentValue = '';
+
 document.addEventListener("DOMContentLoaded", function(){
     //store all components on html in our Js
     let clear = document.querySelector("#clear-btn");
@@ -7,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function(){
     let numbers = document.querySelectorAll("number")
     let operators = document.querySelectorAll("operators");
     
-    let previousScreen = document.querySelector(".previousScreen");
+    let previousScreen = document.querySelector(".previous");
     let currentScreen = document.querySelector(".current");
 
 })
