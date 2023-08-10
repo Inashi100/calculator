@@ -1,5 +1,3 @@
-let operator = ''
-
 document.addEventListener("DOMContentLoaded", function(){
     //store all components on html in our Js
     let clear = document.querySelector("#clear-btn");
