@@ -32,14 +32,15 @@ body{
 .screen{
     padding: 5px;
     width: 300px;
-    height: 80px;
+    height: 70px;
     border: 1px solid rgba(55, 195, 219, 0.753);
     border-radius: 10px;
 }
     
-.prev-input{
-    font-size: medium;        
+.previous{
+    font-size: 30px;        
 }
-.current-input{
-     font-size: x-large;
+
+.current{
+     font-size: 40px;
     }
