@@ -35,12 +35,18 @@ body{
     height: 70px;
     border: 1px solid rgba(55, 195, 219, 0.753);
     border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+
 }
     
 .previous{
-    font-size: 30px;        
+    font-size: 30px;  
 }
 
 .current{
      font-size: 40px;
+
     }

@@ -1,10 +1,10 @@
-let operators = '';
-let previousvalue = '';
+let operator = '';
+let previousValue = '';
 let currentValue = '';
 
 document.addEventListener("DOMContentLoaded", function(){
     //store all components on html in our Js
-    let clear = document.querySelector("#clear-btn");
+    let clear = document.querySelector("#clear");
     let equal = document.querySelector(".equal");
     let decimal = document.querySelector(".decimal");
 
@@ -16,10 +16,59 @@ document.addEventListener("DOMContentLoaded", function(){
 
     numbers.forEach((number) => number.addEventListener("click", function(e){
         handleNumber(e.target.textContent)
+        currentScreen.textContent = currentValue;
+
     })) 
+
+    operators.forEach((op) => op.addEventListener("click", function(e){
+        handleOperators(e.target.textContent)
+        previousScreen.textContent = previousValue +""+ operator;
+        currentScreen.textContent = currentValue;
+    }))
+
+    clear.addEventListener("click", function(){
+        previousValue ='';
+        currentValue = '';
+        operator = '';
+        previousScreen.textContent = currentValue;
+        currentScreen.textContent = currentValue;
+    })
+
+    equal.addEventListener( "click", function(){
+        calculate()
+    })
 
 })
 
 function handleNumber(num){
-console.log(num);
+    if(currentValue.length <=5){
+        currentValue += num;
+
+    }
 }
+
+function handleOperators(op){
+    operator = op;
+    previousValue = currentValue
+    currentValue = "";
+}
+
+function calculate(){
+previousValue = number(previousValue);
+currentValue = number(currentValue);
+    if(operator === "+"){
+        previousValue += currentValue;
+    }
+
+    else if(operator === "-"){
+        previousValue -= currentValue;
+    }
+
+    else if(operator === "/"){
+        previousValue /= currentValue;
+    }
+
+    else
+        previousValue *= currentValue;
+    }
+console.log(previousValue);
