@@ -71,4 +71,5 @@ currentValue = number(currentValue);
     else
         previousValue *= currentValue;
     }
-console.log(previousValue);
+
+    
