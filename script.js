@@ -4,7 +4,7 @@ let currentValue = '';
 
 document.addEventListener("DOMContentLoaded", function(){
     //store all components on html in our Js
-    let clear = document.querySelector("#clear");
+    let clear = document.querySelector(".clear");
     let equal = document.querySelector(".equal");
     let decimal = document.querySelector(".decimal");
 
@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", function(){
     })
 
     equal.addEventListener( "click", function(){
-        calculate()
+        calculate();
         previousScreen.textContent = '';
         currentScreen.textContent = previousValue;
     })
@@ -60,8 +60,8 @@ function handleOperators(op){
 }
 
 function calculate(){
-    previousValue = number(previousValue);
-    currentValue = number(currentValue);
+    previousValue = numbers(previousValue);
+    currentValue = numbers(currentValue);
 
     if(operator === "+"){
         previousValue += currentValue;
@@ -79,18 +79,13 @@ function calculate(){
         previousValue *= currentValue;
     }
 
-    previousValue = roundNumber(previousValue);
-    previousValue = previousValue.toString();
-    currentValue = previousValue.toString();
 }
 
     
-// function roundNumber(num){
-//         return Math.round(num * 1000) / 1000;
-// }
 
 function addDecimal(){
-if(!currentValue.includes(".")){
-    currentValue += '.';
-}
+    if(number === '.' && this.currentValue.includes('.'))return
+    if(!currentValue.includes(".")){
+        currentValue += '.';
+    }
 }
